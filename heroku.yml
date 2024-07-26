@@ -1,0 +1,25 @@
+setup:
+  config:
+    SUBDOMAIN: "n8n-heroku"
+    DOMAIN_NAME: "herokuapp.com"
+    NODE_ENV: "production"
+    TZ: "America/Sao_Paulo"
+    GENERIC_TIMEZONE: "America/Sao_Paulo"
+    N8N_HOST: "${SUBDOMAIN}.${DOMAIN_NAME}"
+    N8N_PORT: "${PORT}"
+    N8N_PROTOCOL: "https"
+    N8N_ENCRYPTION_KEY: "${N8N_ENCRIPT_KEY}"
+    WEBHOOK_TUNNEL_URL: "https://${SUBDOMAIN}.${DOMAIN_NAME}/"
+    VUE_APP_URL_BASE_API: "https://${SUBDOMAIN}.${DOMAIN_NAME}/"
+    DB_TYPE: "postgresdb"
+    DB_POSTGRESDB_HOST: "${DB_HOST}"
+    DB_POSTGRESDB_DATABASE: "${DB_NAME}"
+    DB_POSTGRESDB_PORT: ${DB_PORT}
+    DB_POSTGRESDB_USER: "${DB_USER}"
+    DB_POSTGRESDB_PASSWORD: "${DB_PASSWORD}"
+    N8N_SECURE_COOKIE: false
+
+
+build:
+    docker:
+        web: Dockerfile
